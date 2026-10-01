@@ -261,40 +261,7 @@ h3 {
 }
 
 .city-layout {
-  display: grid;
-  grid-template-columns: 184px minmax(0, 1fr);
-  align-items: start;
-  gap: 48px;
-}
-
-.city-aside {
-  position: sticky;
-  top: 88px;
-}
-
-.city-aside__inner {
-  display: grid;
-  gap: 2px;
-  padding-inline-start: 14px;
-  border-inline-start: 1px solid var(--line);
-}
-
-.city-aside__inner > span {
-  margin-bottom: 7px;
-  color: var(--muted);
-  font-size: .66rem;
-  font-weight: 700;
-}
-
-.city-aside__inner a {
-  padding: 5px 0;
-  color: var(--muted);
-  font-size: .68rem;
-  line-height: 1.7;
-}
-
-.city-aside__inner a:hover {
-  color: var(--accent-dark);
+  display: block;
 }
 
 .city-content {
@@ -419,25 +386,54 @@ h3 {
   color: var(--accent-dark);
 }
 
+.cleaners-featured {
+  padding: 24px 0 30px;
+  border-block: 1px solid var(--line);
+}
+
+.featured-cleaners {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.cleaners-standard { margin-top: 42px; }
+
 .cleaner-list {
   display: grid;
-  gap: 10px;
+  gap: 9px;
 }
 
 .cleaner-card {
-  display: grid;
-  grid-template-columns: minmax(270px, 1.25fr) minmax(230px, .9fr) auto;
-  align-items: center;
-  gap: 22px;
-  padding: 18px 19px;
+  position: relative;
+  padding: 18px;
   border: 1px solid var(--line);
   border-radius: 14px;
   background: var(--surface);
   box-shadow: var(--shadow-soft);
 }
 
-.cleaner-card.is-featured {
+.cleaner-card--featured {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(190px, .75fr);
+  gap: 14px 22px;
   border-color: var(--line-strong);
+  background: linear-gradient(180deg, var(--surface), var(--surface-soft));
+}
+
+.cleaner-card--standard {
+  display: grid;
+  grid-template-columns: minmax(260px, 1.2fr) minmax(220px, .8fr) auto;
+  align-items: center;
+  gap: 22px;
+}
+
+.cleaner-card__topline {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
 }
 
 .cleaner-card__main {
@@ -480,6 +476,16 @@ h3 {
   padding: 3px 8px;
   border: 1px solid var(--line);
   color: var(--muted);
+}
+
+.cleaner-card--featured .cleaner-card__identity h3 {
+  margin-top: 5px;
+  font-size: 1.05rem;
+}
+
+.cleaner-card--featured .cleaner-card__identity p {
+  white-space: normal;
+  line-height: 1.9;
 }
 
 .cleaner-card__identity h3 {
@@ -533,6 +539,17 @@ h3 {
   text-align: right;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.cleaner-card--featured .cleaner-card__contact {
+  align-self: end;
+}
+
+.cleaner-card--featured .cleaner-card__footer {
+  grid-column: 1 / -1;
+  justify-content: space-between;
+  padding-top: 11px;
+  border-top: 1px solid var(--line);
 }
 
 .cleaner-card__footer {
@@ -738,6 +755,76 @@ h3 {
 .related-cities strong { font-size: .8rem; }
 .related-cities span { color: var(--muted); font-size: .64rem; }
 
+
+.reviews-section { padding-top: 4px; }
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.review-card {
+  min-width: 0;
+  padding: 15px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: var(--surface);
+}
+
+.review-card__top {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 11px;
+}
+
+.review-avatar {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+  font-size: .72rem;
+  font-weight: 800;
+}
+
+.review-card__top strong,
+.review-card__top span { display: block; }
+
+.review-card__top strong { font-size: .7rem; }
+
+.review-card__top div span {
+  color: var(--muted);
+  font-size: .56rem;
+}
+
+.review-rating {
+  margin-inline-start: auto;
+  color: var(--accent-dark);
+  font-size: .68rem;
+  font-weight: 800;
+}
+
+.review-card > p {
+  min-height: 76px;
+  margin: 0 0 11px;
+  color: var(--text-soft);
+  font-size: .68rem;
+  line-height: 1.95;
+}
+
+.review-card > a {
+  display: block;
+  padding-top: 9px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: .59rem;
+}
+
 .city-cta {
   display: flex;
   align-items: center;
@@ -788,13 +875,11 @@ h3 {
     gap: 0;
   }
 
-  .city-aside { display: none; }
-
-  .cleaner-card {
+  .cleaner-card--standard {
     grid-template-columns: minmax(250px, 1.2fr) minmax(220px, .8fr);
   }
 
-  .cleaner-card__footer {
+  .cleaner-card--standard .cleaner-card__footer {
     grid-column: 1 / -1;
     justify-content: space-between;
     padding-top: 8px;
@@ -810,6 +895,14 @@ h3 {
 
   .city-intro__visual {
     min-height: 280px;
+  }
+
+  .featured-cleaners {
+    grid-template-columns: 1fr;
+  }
+
+  .reviews-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .city-guide {
@@ -943,11 +1036,17 @@ h3 {
     font-size: .64rem;
   }
 
-  .cleaner-card {
+  .cleaner-card--featured,
+  .cleaner-card--standard {
     display: block;
+  }
+
+  .cleaner-card {
     padding: 15px;
     border-radius: 12px;
   }
+
+  .cleaner-card__topline { margin-bottom: 10px; }
 
   .cleaner-card__main { gap: 10px; }
 
@@ -984,7 +1083,15 @@ h3 {
     padding-top: 11px;
   }
 
+  .cleaner-card--featured .cleaner-card__contact { margin-top: 13px; }
+
+  .cleaner-card--featured .cleaner-card__footer { margin-top: 12px; }
+
   .socials { width: 100%; }
+
+  .reviews-grid { grid-template-columns: 1fr; }
+
+  .review-card > p { min-height: 0; }
 
   .text-link { font-size: .65rem; }
 
