@@ -10,8 +10,11 @@
 
       <nav class="site-footer__nav" aria-label="لینک‌های فوتر">
         <div class="site-footer__column">
-          <h2>دسترسی سریع</h2>
-          <ul>
+          <button class="site-footer__toggle" type="button" aria-expanded="false" aria-controls="footer-links-quick">
+            <span>دسترسی سریع</span>
+            <span class="site-footer__toggle-icon" aria-hidden="true"></span>
+          </button>
+          <ul id="footer-links-quick">
             <li><a href="/province/">استان‌ها</a></li>
             <li><a href="/services/">خدمات قالیشویی</a></li>
             <li><a href="/prices/">قیمت قالیشویی</a></li>
@@ -20,16 +23,22 @@
         </div>
 
         <div class="site-footer__column">
-          <h2>برای کسب‌وکارها</h2>
-          <ul>
+          <button class="site-footer__toggle" type="button" aria-expanded="false" aria-controls="footer-links-business">
+            <span>برای کسب‌وکارها</span>
+            <span class="site-footer__toggle-icon" aria-hidden="true"></span>
+          </button>
+          <ul id="footer-links-business">
             <li><a href="/contact/">ثبت قالیشویی</a></li>
             <li><a href="/contact/">ارتباط با قالی مپ</a></li>
           </ul>
         </div>
 
         <div class="site-footer__column">
-          <h2>راهنمای انتخاب</h2>
-          <ul>
+          <button class="site-footer__toggle" type="button" aria-expanded="false" aria-controls="footer-links-guide">
+            <span>راهنمای انتخاب</span>
+            <span class="site-footer__toggle-icon" aria-hidden="true"></span>
+          </button>
+          <ul id="footer-links-guide">
             <li><a href="/guide/">انتخاب قالیشویی مناسب</a></li>
             <li><a href="/prices/">آشنایی با قیمت‌ها</a></li>
             <li><a href="/services/">شناخت خدمات قالیشویی</a></li>
