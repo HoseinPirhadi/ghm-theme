@@ -1486,3 +1486,350 @@ h3 {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* City page v3 — directory cards, call reveal, reviews and comment form */
+.section-heading p {
+  display: none;
+}
+
+.cleaner-card--featured {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.cleaner-card--standard {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.cleaner-card__call {
+  align-self: center;
+  min-width: 190px;
+}
+
+.cleaner-card__call summary {
+  display: flex;
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  border: 1px solid var(--line-strong);
+  border-radius: 9px;
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+  font-size: .7rem;
+  font-weight: 800;
+  cursor: pointer;
+  list-style: none;
+}
+
+.cleaner-card__call summary::-webkit-details-marker {
+  display: none;
+}
+
+.cleaner-card__call summary::before {
+  margin-inline-end: 7px;
+  content: "☎";
+  font-size: .78rem;
+}
+
+.cleaner-card__call[open] summary {
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.cleaner-card__numbers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.cleaner-card__numbers a {
+  min-width: 0;
+  padding: 7px 8px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--surface-soft);
+}
+
+.cleaner-card__numbers span {
+  display: block;
+  margin-bottom: 2px;
+  color: var(--muted);
+  font-size: .54rem;
+}
+
+.cleaner-card__numbers strong {
+  display: block;
+  overflow: hidden;
+  direction: ltr;
+  color: var(--text);
+  font-size: .62rem;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cleaner-card__numbers a:hover {
+  border-color: var(--line-strong);
+}
+
+.neighborhood-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.neighborhood-list a {
+  display: flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 9px 11px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: var(--surface);
+  color: var(--text-soft);
+  font-size: .68rem;
+}
+
+.neighborhood-list a::after {
+  width: 5px;
+  height: 5px;
+  flex: 0 0 5px;
+  border-top: 1px solid var(--line-strong);
+  border-left: 1px solid var(--line-strong);
+  content: "";
+  transform: rotate(-45deg);
+}
+
+.neighborhood-list a:hover {
+  border-color: var(--line-strong);
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+}
+
+.reviews-list {
+  display: grid;
+  gap: 8px;
+  max-width: 900px;
+}
+
+.reviews-list .review-card {
+  display: grid;
+  grid-template-columns: minmax(180px, .32fr) minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 18px;
+  padding: 16px 18px;
+  border-radius: 11px;
+  box-shadow: none;
+}
+
+.reviews-list .review-card__top {
+  margin-bottom: 0;
+}
+
+.reviews-list .review-card > p {
+  min-height: 0;
+  margin: 0;
+}
+
+.reviews-list .review-card > a {
+  min-width: 110px;
+  padding-top: 0;
+  border-top: 0;
+  text-align: left;
+}
+
+.review-form-box {
+  max-width: 900px;
+  margin-top: 24px;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface-soft);
+}
+
+.review-form-box__heading {
+  margin-bottom: 18px;
+}
+
+.review-form-box__heading .section-kicker {
+  margin-bottom: 3px;
+}
+
+.review-form-box__heading h3 {
+  margin-bottom: 0;
+  font-size: 1rem;
+}
+
+.review-form {
+  display: grid;
+  gap: 14px;
+}
+
+.review-form__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.review-form label {
+  display: grid;
+  gap: 6px;
+}
+
+.review-form label > span {
+  color: var(--text-soft);
+  font-size: .65rem;
+  font-weight: 700;
+}
+
+.review-form input,
+.review-form select,
+.review-form textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  outline: none;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-size: .7rem;
+}
+
+.review-form input,
+.review-form select {
+  min-height: 42px;
+  padding: 8px 10px;
+}
+
+.review-form textarea {
+  min-height: 125px;
+  padding: 10px;
+  resize: vertical;
+}
+
+.review-form input:focus,
+.review-form select:focus,
+.review-form textarea:focus {
+  border-color: var(--line-strong);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.review-form__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.review-form__footer small {
+  color: var(--muted);
+  font-size: .59rem;
+  line-height: 1.8;
+}
+
+@media (max-width: 900px) {
+  .cleaner-card--featured,
+  .cleaner-card--standard {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .reviews-list .review-card {
+    grid-template-columns: minmax(170px, .38fr) minmax(0, 1fr);
+  }
+
+  .reviews-list .review-card > a {
+    grid-column: 2;
+    padding-top: 8px;
+    border-top: 1px solid var(--line);
+    text-align: right;
+  }
+
+  .neighborhood-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .cleaner-card--featured,
+  .cleaner-card--standard {
+    display: block;
+  }
+
+  .cleaner-card__call {
+    margin-top: 13px;
+  }
+
+  .cleaner-card__call summary {
+    width: 100%;
+  }
+
+  .cleaner-card__numbers {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .neighborhood-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+
+  .neighborhood-list a {
+    min-height: 44px;
+    padding: 8px 9px;
+    font-size: .64rem;
+  }
+
+  .reviews-list .review-card {
+    display: block;
+    padding: 14px;
+  }
+
+  .reviews-list .review-card__top {
+    margin-bottom: 10px;
+  }
+
+  .reviews-list .review-card > p {
+    margin-bottom: 10px;
+    font-size: .67rem;
+    line-height: 1.95;
+  }
+
+  .reviews-list .review-card > a {
+    display: block;
+    padding-top: 9px;
+    border-top: 1px solid var(--line);
+    font-size: .6rem;
+    text-align: right;
+  }
+
+  .review-form-box {
+    margin-top: 18px;
+    padding: 17px 14px;
+  }
+
+  .review-form__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .review-form__footer {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .review-form__footer .button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 380px) {
+  .cleaner-card__numbers {
+    grid-template-columns: 1fr;
+  }
+
+  .neighborhood-list {
+    grid-template-columns: 1fr;
+  }
+}
