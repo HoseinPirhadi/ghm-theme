@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . '/../config/theme.php';
+$theme = require __DIR__ . '/../config/theme.php';
 require __DIR__ . '/data/city.php';
 
 $theme_css = '';
