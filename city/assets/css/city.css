@@ -46,7 +46,7 @@ h3 { font-size: 1.05rem; margin-bottom: 5px; }
 }
 .button-primary { background: var(--accent); color: var(--white); }
 .button-primary:hover { background: var(--accent-dark); }
-.button-secondary { background: var(--soft); color: var(--accent-dark); }
+.button-secondary { background: var(--accent-soft); color: var(--accent-dark); }
 .button-secondary:hover { transform: translateY(-1px); }
 .hero-media { min-height: 360px; padding: 14px; }
 .image-placeholder {
@@ -59,7 +59,7 @@ h3 { font-size: 1.05rem; margin-bottom: 5px; }
 .section-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(22px, 4vw, 34px); box-shadow: var(--shadow); }
 .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 20px; margin-bottom: 22px; }
 .muted, .result-count { color: var(--muted); font-size: .85rem; }
-.count-badge { background: var(--soft); color: var(--accent-dark); border-radius: 999px; padding: 4px 10px; font-size: .8rem; font-weight: 700; }
+.count-badge { background: var(--accent-soft); color: var(--accent-dark); border-radius: 999px; padding: 4px 10px; font-size: .8rem; font-weight: 700; }
 
 .link-groups { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .link-group h3 { margin-bottom: 12px; }
@@ -79,7 +79,7 @@ h3 { font-size: 1.05rem; margin-bottom: 5px; }
 .cleaner-top { display: flex; gap: 13px; }
 .logo-placeholder {
   flex: 0 0 58px; width: 58px; height: 58px; border-radius: 13px;
-  background: var(--soft); display: grid; place-items: center; color: var(--accent-dark);
+  background: var(--accent-soft); display: grid; place-items: center; color: var(--accent-dark);
   font-size: .7rem; font-weight: 700;
 }
 .cleaner-card p { margin: 0; color: var(--muted); font-size: .86rem; }
