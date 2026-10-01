@@ -2,7 +2,7 @@
   <div class="container site-header__inner">
     <a class="site-header__brand" href="/" aria-label="قالی مپ">قالی مپ</a>
 
-    <nav class="site-header__nav" aria-label="ناوبری اصلی">
+    <nav id="site-header-nav" class="site-header__nav" aria-label="ناوبری اصلی">
       <a class="site-header__nav-link is-active" href="/province/">استان‌ها</a>
       <a class="site-header__nav-link" href="/city/">شهرها</a>
       <a class="site-header__nav-link" href="/about/">درباره قالی مپ</a>
