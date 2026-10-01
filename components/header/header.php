@@ -11,9 +11,7 @@
 
     <div class="site-header__actions">
       <a class="site-header__contact" href="/contact/">
-        <svg class="site-header__contact-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-          <path d="M12 3v10m0 0 4-4m-4 4-4-4M5 14v3a4 4 0 0 0 4 4h6a4 4 0 0 0 4-4v-3" />
-        </svg>
+        <span class="site-header__contact-icon" aria-hidden="true">+</span>
         <span>ثبت قالیشویی</span>
       </a>
       <button class="site-header__menu" type="button" aria-expanded="false" aria-controls="site-header-nav" aria-label="باز کردن منوی سایت">
