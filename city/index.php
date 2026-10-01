@@ -276,20 +276,10 @@ foreach ($city['regions'] as $locations) {
         </section>
 
       </div>
-          <a class="button button-primary" href="/contact/">ثبت قالیشویی</a>
-        </section>
-
-        <section class="comments-placeholder" aria-labelledby="comments-title">
-          <div>
-            <span class="section-kicker">تجربه کاربران</span>
-            <h2 id="comments-title">نظرات کاربران</h2>
-          </div>
-          <p>بخش نظرات در نسخه نهایی WordPress در این قسمت نمایش داده می‌شود.</p>
-        </section>
-      </div>
     </div>
   </div>
 </main>
+
 
 <?php require __DIR__ . '/../components/footer/footer.php'; ?>
 
