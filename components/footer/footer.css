@@ -2,7 +2,7 @@
 .site-footer {
   margin-top: 70px;
   border-top: 1px solid var(--line);
-  background: #fff;
+  background: var(--surface);
 }
 .site-footer p {
   padding: 28px 0;
