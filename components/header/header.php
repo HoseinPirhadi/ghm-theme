@@ -4,7 +4,6 @@
 
     <nav id="site-header-nav" class="site-header__nav" aria-label="ناوبری اصلی">
       <a class="site-header__nav-link is-active" href="/province/">استان‌ها</a>
-      <a class="site-header__nav-link" href="/city/">شهرها</a>
       <a class="site-header__nav-link" href="/services/">خدمات قالیشویی</a>
       <a class="site-header__nav-link" href="/prices/">قیمت قالیشویی</a>
       <a class="site-header__nav-link" href="/guide/">راهنمای قالیشویی</a>
