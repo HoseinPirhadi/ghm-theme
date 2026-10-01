@@ -190,18 +190,20 @@ foreach ($city['regions'] as $locations) {
             <span class="count-badge"><?= $location_count ?> مورد</span>
           </div>
 
-          <div class="location-direction">
-            <div class="location-subheading"><span>جهت‌های شهر</span><small>۴ جهت اصلی</small></div>
-            <div class="direction-grid">
-              <?php foreach ($city['regions']['جهت‌ها'] as $direction): ?>
-                <a class="direction-card" href="#">
-                  <span class="direction-card__mark" aria-hidden="true"></span>
-                  <strong><?= htmlspecialchars($direction, ENT_QUOTES, 'UTF-8') ?></strong>
-                  <small>قالیشویی‌های این محدوده <b>←</b></small>
-                </a>
-              <?php endforeach; ?>
+          <?php if ($city['slug'] === 'tehran' && !empty($city['regions']['جهت‌ها'])): ?>
+            <div class="location-direction">
+              <div class="location-subheading"><span>جهت‌های تهران</span><small>۴ جهت اصلی</small></div>
+              <div class="direction-grid">
+                <?php foreach ($city['regions']['جهت‌ها'] as $direction): ?>
+                  <a class="direction-card" href="#">
+                    <span class="direction-card__mark" aria-hidden="true"></span>
+                    <strong><?= htmlspecialchars($direction, ENT_QUOTES, 'UTF-8') ?></strong>
+                    <small>قالیشویی‌های این محدوده <b>←</b></small>
+                  </a>
+                <?php endforeach; ?>
+              </div>
             </div>
-          </div>
+          <?php endif; ?>
 
           <div class="location-regions">
             <div class="location-subheading"><span>مناطق تهران</span><small><?= count($city['regions']['مناطق']) ?> منطقه</small></div>
