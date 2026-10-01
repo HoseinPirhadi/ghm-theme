@@ -67,11 +67,13 @@ foreach ($city['regions'] as $locations) {
     </section>
 
     <nav class="city-tabs" aria-label="بخش‌های صفحه">
-      <a href="#areas">مناطق و محله‌ها</a>
+      <a href="#recommended">پیشنهادی‌ها</a>
       <a href="#cleaners">قالیشویی‌ها</a>
+      <a href="#guide">محتوا</a>
       <a href="#prices">قیمت‌ها</a>
-      <a href="#guide">راهنما</a>
+      <a href="#areas">محدوده‌ها</a>
       <a href="#faq">سوالات متداول</a>
+      <a href="#reviews">نظرات</a>
     </nav>
 
     <div class="city-layout">
@@ -82,7 +84,6 @@ foreach ($city['regions'] as $locations) {
             <div>
               <span class="section-kicker">انتخاب قالی مپ</span>
               <h2 id="featured-cleaners-title">قالیشویی‌های پیشنهادی</h2>
-              <p>مجموعه‌هایی که در ابتدای فهرست شهر نمایش داده می‌شوند و در نسخه واقعی بر اساس معیارهای تعریف‌شده سایت تکمیل خواهند شد.</p>
             </div>
           </div>
           <div class="featured-cleaners">
@@ -99,16 +100,13 @@ foreach ($city['regions'] as $locations) {
                     <p><?= htmlspecialchars($cleaner['description'], ENT_QUOTES, 'UTF-8') ?></p>
                   </div>
                 </div>
-                <div class="cleaner-card__contact">
-                  <a href="tel:<?= htmlspecialchars($cleaner['landline'], ENT_QUOTES, 'UTF-8') ?>"><span>تلفن ثابت</span><strong><?= htmlspecialchars($cleaner['landline'], ENT_QUOTES, 'UTF-8') ?></strong></a>
-                  <a href="tel:<?= htmlspecialchars($cleaner['mobile'], ENT_QUOTES, 'UTF-8') ?>"><span>موبایل</span><strong><?= htmlspecialchars($cleaner['mobile'], ENT_QUOTES, 'UTF-8') ?></strong></a>
-                </div>
-                <div class="cleaner-card__footer">
-                  <div class="socials">
-                    <?php foreach ($cleaner['socials'] as $social): ?><a href="#"><?= htmlspecialchars($social, ENT_QUOTES, 'UTF-8') ?></a><?php endforeach; ?>
+                <details class="cleaner-card__call">
+                  <summary>تماس با قالیشویی</summary>
+                  <div class="cleaner-card__numbers">
+                    <a href="tel:<?= htmlspecialchars($cleaner['landline'], ENT_QUOTES, 'UTF-8') ?>"><span>تلفن ثابت</span><strong><?= htmlspecialchars($cleaner['landline'], ENT_QUOTES, 'UTF-8') ?></strong></a>
+                    <a href="tel:<?= htmlspecialchars($cleaner['mobile'], ENT_QUOTES, 'UTF-8') ?>"><span>موبایل</span><strong><?= htmlspecialchars($cleaner['mobile'], ENT_QUOTES, 'UTF-8') ?></strong></a>
                   </div>
-                  <a class="text-link" href="#">مشاهده پروفایل <b>←</b></a>
-                </div>
+                </details>
               </article>
             <?php endforeach; ?>
           </div>
@@ -119,7 +117,6 @@ foreach ($city['regions'] as $locations) {
             <div>
               <span class="section-kicker">فهرست شهر</span>
               <h2 id="standard-cleaners-title">قالیشویی‌های تهران</h2>
-              <p>فهرست عمومی مجموعه‌ها؛ بدون برچسب پیشنهادی و با ساختار ساده‌تر برای مقایسه و ورود به جزئیات.</p>
             </div>
             <span class="result-count"><?= count($city['cleaners']) ?> مورد نمونه</span>
           </div>
@@ -134,20 +131,16 @@ foreach ($city['regions'] as $locations) {
                     <p><?= htmlspecialchars($cleaner['description'], ENT_QUOTES, 'UTF-8') ?></p>
                   </div>
                 </div>
-                <div class="cleaner-card__contact">
-                  <a href="tel:<?= htmlspecialchars($cleaner['landline'], ENT_QUOTES, 'UTF-8') ?>"><span>تلفن ثابت</span><strong><?= htmlspecialchars($cleaner['landline'], ENT_QUOTES, 'UTF-8') ?></strong></a>
-                  <a href="tel:<?= htmlspecialchars($cleaner['mobile'], ENT_QUOTES, 'UTF-8') ?>"><span>موبایل</span><strong><?= htmlspecialchars($cleaner['mobile'], ENT_QUOTES, 'UTF-8') ?></strong></a>
-                </div>
-                <div class="cleaner-card__footer">
-                  <div class="socials">
-                    <?php foreach ($cleaner['socials'] as $social): ?><a href="#"><?= htmlspecialchars($social, ENT_QUOTES, 'UTF-8') ?></a><?php endforeach; ?>
+                <details class="cleaner-card__call">
+                  <summary>تماس با قالیشویی</summary>
+                  <div class="cleaner-card__numbers">
+                    <a href="tel:<?= htmlspecialchars($cleaner['landline'], ENT_QUOTES, 'UTF-8') ?>"><span>تلفن ثابت</span><strong><?= htmlspecialchars($cleaner['landline'], ENT_QUOTES, 'UTF-8') ?></strong></a>
+                    <a href="tel:<?= htmlspecialchars($cleaner['mobile'], ENT_QUOTES, 'UTF-8') ?>"><span>موبایل</span><strong><?= htmlspecialchars($cleaner['mobile'], ENT_QUOTES, 'UTF-8') ?></strong></a>
                   </div>
-                  <a class="text-link" href="#">جزئیات مجموعه <b>←</b></a>
-                </div>
+                </details>
               </article>
             <?php endforeach; ?>
           </div>
-          <div class="section-action"><button class="button button-quiet" type="button">نمایش قالیشویی‌های بیشتر</button></div>
         </section>
 
         <section id="guide" class="city-section city-guide" aria-labelledby="guide-title">
@@ -166,7 +159,6 @@ foreach ($city['regions'] as $locations) {
             <div>
               <span class="section-kicker">هزینه خدمات</span>
               <h2 id="prices-title">لیست قیمت قالیشویی در تهران</h2>
-              <p>قیمت‌ها در این پروتوتایپ نمونه هستند و در نسخه واقعی بر اساس داده‌های معتبر به‌روزرسانی می‌شوند.</p>
             </div>
           </div>
           <div class="price-table-wrap">
@@ -194,7 +186,6 @@ foreach ($city['regions'] as $locations) {
             <div>
               <span class="section-kicker">پوشش شهری</span>
               <h2 id="areas-title">محدوده‌های قالیشویی در تهران</h2>
-              <p>مناطق، محله‌های منتخب و چهار جهت اصلی شهر، هرکدام با الگوی نمایش متناسب با نوع اطلاعات.</p>
             </div>
             <span class="count-badge"><?= $location_count ?> مورد</span>
           </div>
@@ -247,14 +238,21 @@ foreach ($city['regions'] as $locations) {
 
         <section id="reviews" class="city-section reviews-section" aria-labelledby="reviews-title">
           <div class="section-heading">
-            <div><span class="section-kicker">تجربه کاربران</span><h2 id="reviews-title">نظرات کاربران درباره قالیشویی‌ها</h2><p>نمونه‌ای از نمایش تجربه کاربران در نسخه نهایی.</p></div>
+            <div>
+              <span class="section-kicker">تجربه کاربران</span>
+              <h2 id="reviews-title">نظرات کاربران</h2>
+            </div>
           </div>
-          <div class="reviews-grid">
+
+          <div class="reviews-list">
             <?php foreach ($city['reviews'] as $review): ?>
               <article class="review-card">
                 <div class="review-card__top">
                   <div class="review-avatar"><?= htmlspecialchars($review['avatar'], ENT_QUOTES, 'UTF-8') ?></div>
-                  <div><strong><?= htmlspecialchars($review['name'], ENT_QUOTES, 'UTF-8') ?></strong><span><?= htmlspecialchars($review['date'], ENT_QUOTES, 'UTF-8') ?></span></div>
+                  <div>
+                    <strong><?= htmlspecialchars($review['name'], ENT_QUOTES, 'UTF-8') ?></strong>
+                    <span><?= htmlspecialchars($review['date'], ENT_QUOTES, 'UTF-8') ?></span>
+                  </div>
                   <span class="review-rating" aria-label="<?= htmlspecialchars($review['rating'], ENT_QUOTES, 'UTF-8') ?> از ۵"><?= htmlspecialchars($review['rating'], ENT_QUOTES, 'UTF-8') ?></span>
                 </div>
                 <p><?= htmlspecialchars($review['text'], ENT_QUOTES, 'UTF-8') ?></p>
@@ -262,11 +260,57 @@ foreach ($city['regions'] as $locations) {
               </article>
             <?php endforeach; ?>
           </div>
+
+          <div class="review-form-box">
+            <div class="review-form-box__heading">
+              <span class="section-kicker">ثبت تجربه</span>
+              <h3>نظر خود را درباره تجربه‌تان ثبت کنید</h3>
+            </div>
+            <form class="review-form" action="#" method="post">
+              <div class="review-form__grid">
+                <label>
+                  <span>نام</span>
+                  <input type="text" name="review_name" placeholder="نام شما">
+                </label>
+                <label>
+                  <span>قالیشویی</span>
+                  <select name="review_cleaner">
+                    <option value="">انتخاب قالیشویی</option>
+                    <?php foreach ($city['recommended_cleaners'] as $cleaner): ?>
+                      <option value="<?= htmlspecialchars($cleaner['name'], ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars($cleaner['name'], ENT_QUOTES, 'UTF-8') ?></option>
+                    <?php endforeach; ?>
+                    <?php foreach ($city['cleaners'] as $cleaner): ?>
+                      <option value="<?= htmlspecialchars($cleaner['name'], ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars($cleaner['name'], ENT_QUOTES, 'UTF-8') ?></option>
+                    <?php endforeach; ?>
+                  </select>
+                </label>
+                <label>
+                  <span>امتیاز</span>
+                  <select name="review_rating">
+                    <option value="">انتخاب امتیاز</option>
+                    <option value="5">۵ از ۵</option>
+                    <option value="4">۴ از ۵</option>
+                    <option value="3">۳ از ۵</option>
+                    <option value="2">۲ از ۵</option>
+                    <option value="1">۱ از ۵</option>
+                  </select>
+                </label>
+              </div>
+              <label>
+                <span>نظر شما</span>
+                <textarea name="review_text" rows="5" placeholder="تجربه خود را درباره کیفیت خدمات، زمان‌بندی یا نحوه پاسخ‌گویی بنویسید."></textarea>
+              </label>
+              <div class="review-form__footer">
+                <small>این فرم در پروتوتایپ است و در نسخه WordPress به سیستم نظرات متصل می‌شود.</small>
+                <button class="button button-primary" type="submit">ارسال نظر</button>
+              </div>
+            </form>
+          </div>
         </section>
 
         <section id="related" class="city-section related-section" aria-labelledby="related-title">
           <div class="section-heading">
-            <div><span class="section-kicker">ادامه جستجو</span><h2 id="related-title">شهرهای دیگر استان تهران</h2><p>برای جست‌وجوی قالیشویی در سایر شهرهای استان تهران.</p></div>
+            <div><span class="section-kicker">ادامه جستجو</span><h2 id="related-title">شهرهای دیگر استان تهران</h2></div>
           </div>
           <div class="related-cities">
             <?php foreach ($city['related_cities'] as $related_city): ?>
