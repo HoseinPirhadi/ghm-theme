@@ -1,0 +1,11 @@
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
+  padding: 22px 0 24px;
+  color: var(--muted);
+  font-size: .82rem;
+}
+.breadcrumbs a:hover { color: var(--accent-dark); }
+.breadcrumbs strong { color: var(--text); font-weight: 700; }
