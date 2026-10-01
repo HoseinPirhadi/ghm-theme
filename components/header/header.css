@@ -60,9 +60,12 @@
   flex: 0 0 auto;
 }
 .site-header__contact {
+  direction: rtl;
   display: inline-flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
+  gap: 7px;
   min-height: 40px;
   padding: 0 15px;
   border: 1px solid var(--line-strong);
@@ -74,6 +77,16 @@
   white-space: nowrap;
   box-shadow: 0 4px 12px rgba(110, 78, 35, .1);
   transition: background .18s ease, transform .18s ease;
+}
+.site-header__contact-icon {
+  flex: 0 0 auto;
+  width: 17px;
+  height: 17px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 .site-header__contact:hover {
   background: var(--accent-dark);
