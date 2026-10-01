@@ -257,6 +257,7 @@ $breadcrumb_items = [
 <?php require __DIR__ . '/../components/footer/footer.php'; ?>
 
 <script src="../components/header/header.js"></script>
+<script src="../components/footer/footer.js"></script>
 <script src="assets/js/city.js"></script>
 </body>
 </html>
