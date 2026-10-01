@@ -6,19 +6,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const closeMenu = () => {
     menu.setAttribute("aria-expanded", "false");
-    menu.setAttribute("aria-label", "باز کردن منو");
+    menu.setAttribute("aria-label", "باز کردن منوی سایت");
     nav.classList.remove("is-open");
-  };
-
-  const openMenu = () => {
-    menu.setAttribute("aria-expanded", "true");
-    menu.setAttribute("aria-label", "بستن منو");
-    nav.classList.add("is-open");
   };
 
   menu.addEventListener("click", () => {
     const open = menu.getAttribute("aria-expanded") === "true";
-    open ? closeMenu() : openMenu();
+    menu.setAttribute("aria-expanded", String(!open));
+    menu.setAttribute("aria-label", open ? "باز کردن منوی سایت" : "بستن منوی سایت");
+    nav.classList.toggle("is-open", !open);
   });
 
   nav.querySelectorAll("a").forEach((link) => {
