@@ -1,21 +1,17 @@
 <header class="site-header">
   <div class="container site-header__inner">
-    <a class="site-header__brand" href="/" aria-label="قالی مپ">
-      <span class="site-header__brand-mark" aria-hidden="true">قالی</span>
-      <span class="site-header__brand-name">مپ</span>
-    </a>
+    <a class="site-header__brand" href="/" aria-label="قالی مپ">قالی مپ</a>
 
     <nav class="site-header__nav" aria-label="ناوبری اصلی">
-      <a href="/province/">استان‌ها</a>
-      <a href="/city/">شهرها</a>
-      <a href="/about/">درباره قالی مپ</a>
+      <a class="site-header__nav-link is-active" href="/province/">استان‌ها</a>
+      <a class="site-header__nav-link" href="/city/">شهرها</a>
+      <a class="site-header__nav-link" href="/about/">درباره قالی مپ</a>
     </nav>
 
     <div class="site-header__actions">
-      <a class="site-header__action site-header__action--outline" href="/contact/">تماس با ما</a>
-      <button class="site-header__menu" type="button" aria-expanded="false" aria-controls="site-header-nav">
+      <a class="site-header__contact" href="/contact/">ثبت قالیشویی</a>
+      <button class="site-header__menu" type="button" aria-expanded="false" aria-controls="site-header-nav" aria-label="باز کردن منو">
         <span></span><span></span><span></span>
-        <span class="sr-only">باز کردن منو</span>
       </button>
     </div>
   </div>
