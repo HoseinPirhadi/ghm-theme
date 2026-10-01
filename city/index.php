@@ -1,5 +1,11 @@
 <?php
+require __DIR__ . '/../config/theme.php';
 require __DIR__ . '/data/city.php';
+
+$theme_css = '';
+foreach ($theme as $name => $value) {
+    $theme_css .= '--' . $name . ':' . htmlspecialchars($value, ENT_QUOTES, 'UTF-8') . ';';
+}
 
 $breadcrumb_items = [
     ['label' => 'خانه', 'url' => '/'],
@@ -14,6 +20,8 @@ $breadcrumb_items = [
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="<?= htmlspecialchars($city['intro'], ENT_QUOTES, 'UTF-8') ?>">
   <title><?= htmlspecialchars($city['title'], ENT_QUOTES, 'UTF-8') ?> | قالی مپ</title>
+
+  <style>:root { <?= $theme_css ?> }</style>
 
   <link rel="stylesheet" href="../components/header/header.css">
   <link rel="stylesheet" href="../components/breadcrumb/breadcrumb.css">
