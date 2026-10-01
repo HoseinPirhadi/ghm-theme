@@ -94,7 +94,7 @@ foreach ($city['regions'] as $locations) {
                   <div class="cleaner-card__identity">
                     <div class="cleaner-card__labels">
                       <span class="status-badge">پیشنهاد قالی مپ</span>
-                      <span class="sample-badge">داده نمونه</span>
+
                     </div>
                     <h3><?= htmlspecialchars($cleaner['name'], ENT_QUOTES, 'UTF-8') ?></h3>
                     <p><?= htmlspecialchars($cleaner['description'], ENT_QUOTES, 'UTF-8') ?></p>
@@ -126,7 +126,7 @@ foreach ($city['regions'] as $locations) {
                 <div class="cleaner-card__main">
                   <div class="logo-placeholder" aria-hidden="true"><?= htmlspecialchars($cleaner['logo'], ENT_QUOTES, 'UTF-8') ?></div>
                   <div class="cleaner-card__identity">
-                    <span class="sample-badge">داده نمونه</span>
+
                     <h3><?= htmlspecialchars($cleaner['name'], ENT_QUOTES, 'UTF-8') ?></h3>
                     <p><?= htmlspecialchars($cleaner['description'], ENT_QUOTES, 'UTF-8') ?></p>
                   </div>
