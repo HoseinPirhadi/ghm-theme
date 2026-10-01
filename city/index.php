@@ -51,7 +51,7 @@ foreach ($city['regions'] as $locations) {
         </div>
 
         <div class="city-intro__facts" aria-label="خلاصه اطلاعات">
-          <span><strong><?= count($cleaners) ?></strong> مجموعه نمونه</span>
+          <span><strong><?= count($city['recommended_cleaners']) + count($city['cleaners']) ?></strong> مجموعه نمونه</span>
           <i aria-hidden="true"></i>
           <span><strong><?= $location_count ?></strong> محدوده</span>
           <i aria-hidden="true"></i>
