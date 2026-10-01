@@ -250,15 +250,14 @@ foreach ($city['regions'] as $locations) {
             <?php foreach ($city['reviews'] as $review): ?>
               <article class="review-card">
                 <div class="review-card__top">
-                  <div class="review-avatar"><?= htmlspecialchars($review['avatar'], ENT_QUOTES, 'UTF-8') ?></div>
-                  <div>
+                  <div class="review-avatar" aria-hidden="true"><?= htmlspecialchars($review['avatar'], ENT_QUOTES, 'UTF-8') ?></div>
+                  <div class="review-card__author">
                     <strong><?= htmlspecialchars($review['name'], ENT_QUOTES, 'UTF-8') ?></strong>
                     <span><?= htmlspecialchars($review['date'], ENT_QUOTES, 'UTF-8') ?></span>
                   </div>
-                  <span class="review-rating" aria-label="<?= htmlspecialchars($review['rating'], ENT_QUOTES, 'UTF-8') ?> از ۵"><?= htmlspecialchars($review['rating'], ENT_QUOTES, 'UTF-8') ?></span>
+                  <span class="review-rating" aria-label="<?= htmlspecialchars($review['rating'], ENT_QUOTES, 'UTF-8') ?> از ۵"><?= htmlspecialchars($review['rating'], ENT_QUOTES, 'UTF-8') ?> از ۵</span>
                 </div>
                 <p><?= htmlspecialchars($review['text'], ENT_QUOTES, 'UTF-8') ?></p>
-                <a href="#"><?= htmlspecialchars($review['cleaner'], ENT_QUOTES, 'UTF-8') ?></a>
               </article>
             <?php endforeach; ?>
           </div>
@@ -273,18 +272,6 @@ foreach ($city['regions'] as $locations) {
                 <label>
                   <span>نام</span>
                   <input type="text" name="review_name" placeholder="نام شما">
-                </label>
-                <label>
-                  <span>قالیشویی</span>
-                  <select name="review_cleaner">
-                    <option value="">انتخاب قالیشویی</option>
-                    <?php foreach ($city['recommended_cleaners'] as $cleaner): ?>
-                      <option value="<?= htmlspecialchars($cleaner['name'], ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars($cleaner['name'], ENT_QUOTES, 'UTF-8') ?></option>
-                    <?php endforeach; ?>
-                    <?php foreach ($city['cleaners'] as $cleaner): ?>
-                      <option value="<?= htmlspecialchars($cleaner['name'], ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars($cleaner['name'], ENT_QUOTES, 'UTF-8') ?></option>
-                    <?php endforeach; ?>
-                  </select>
                 </label>
                 <label>
                   <span>امتیاز</span>
